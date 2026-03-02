@@ -4,7 +4,7 @@
   "info": {
     "singularName": "registered-user",
     "pluralName": "registered-users",
-    "displayName": "registered_user"
+    "displayName": "registered-user"
   },
   "options": {
     "draftAndPublish": true

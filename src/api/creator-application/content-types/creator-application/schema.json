@@ -4,7 +4,7 @@
   "info": {
     "singularName": "creator-application",
     "pluralName": "creator-applications",
-    "displayName": "creator_application"
+    "displayName": "creator-application"
   },
   "options": {
     "draftAndPublish": true

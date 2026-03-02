@@ -471,7 +471,7 @@ export interface ApiCreatorApplicationCreatorApplication
   extends Struct.CollectionTypeSchema {
   collectionName: 'creator_applications';
   info: {
-    displayName: 'creator_application';
+    displayName: 'creator-application';
     pluralName: 'creator-applications';
     singularName: 'creator-application';
   };
@@ -572,7 +572,7 @@ export interface ApiRegisteredUserRegisteredUser
   extends Struct.CollectionTypeSchema {
   collectionName: 'registered_users';
   info: {
-    displayName: 'registered_user';
+    displayName: 'registered-user';
     pluralName: 'registered-users';
     singularName: 'registered-user';
   };
