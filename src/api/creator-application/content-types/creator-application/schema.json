@@ -1,0 +1,49 @@
+{
+  "kind": "collectionType",
+  "collectionName": "creator_applications",
+  "info": {
+    "singularName": "creator-application",
+    "pluralName": "creator-applications",
+    "displayName": "creator_application"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "username": {
+      "type": "string"
+    },
+    "email": {
+      "type": "email"
+    },
+    "youtube": {
+      "type": "string"
+    },
+    "twitch": {
+      "type": "string"
+    },
+    "twitter": {
+      "type": "string"
+    },
+    "profile_picture": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "bio": {
+      "type": "string"
+    },
+    "category": {
+      "type": "string"
+    }
+  }
+}
