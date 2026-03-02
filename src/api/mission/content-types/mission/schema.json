@@ -4,7 +4,7 @@
   "info": {
     "singularName": "mission",
     "pluralName": "missions",
-    "displayName": "mission"
+    "displayName": "quest"
   },
   "options": {
     "draftAndPublish": true

@@ -539,7 +539,7 @@ export interface ApiMerchandiseMerchandise extends Struct.CollectionTypeSchema {
 export interface ApiMissionMission extends Struct.CollectionTypeSchema {
   collectionName: 'missions';
   info: {
-    displayName: 'mission';
+    displayName: 'quest';
     pluralName: 'missions';
     singularName: 'mission';
   };
