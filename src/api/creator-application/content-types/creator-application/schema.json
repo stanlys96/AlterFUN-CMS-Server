@@ -18,7 +18,8 @@
       "type": "string"
     },
     "email": {
-      "type": "email"
+      "type": "email",
+      "unique": true
     },
     "youtube": {
       "type": "string"

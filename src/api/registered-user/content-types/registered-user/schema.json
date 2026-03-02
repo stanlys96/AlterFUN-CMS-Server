@@ -12,12 +12,16 @@
   "pluginOptions": {},
   "attributes": {
     "email": {
-      "type": "email"
+      "type": "email",
+      "unique": true
     },
     "method": {
       "type": "string"
     },
     "wallet_address": {
+      "type": "string"
+    },
+    "did": {
       "type": "string"
     }
   }
