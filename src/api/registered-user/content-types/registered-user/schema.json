@@ -15,9 +15,6 @@
       "type": "email",
       "unique": true
     },
-    "method": {
-      "type": "string"
-    },
     "wallet_address": {
       "type": "string"
     },

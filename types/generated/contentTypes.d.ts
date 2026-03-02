@@ -591,7 +591,6 @@ export interface ApiRegisteredUserRegisteredUser
       'api::registered-user.registered-user'
     > &
       Schema.Attribute.Private;
-    method: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
