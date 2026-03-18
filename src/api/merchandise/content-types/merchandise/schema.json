@@ -4,7 +4,7 @@
   "info": {
     "singularName": "merchandise",
     "pluralName": "merchandises",
-    "displayName": "merchandise"
+    "displayName": "Merchandise"
   },
   "options": {
     "draftAndPublish": true
@@ -12,20 +12,53 @@
   "pluginOptions": {},
   "attributes": {
     "title": {
-      "type": "string"
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "images": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": ["images"]
     },
     "price": {
       "type": "integer"
     },
-    "picture": {
-      "type": "media",
-      "multiple": false,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
+    "original_price": {
+      "type": "integer"
+    },
+    "discount": {
+      "type": "integer"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": ["physical", "digital"]
+    },
+    "stock": {
+      "type": "integer"
+    },
+    "sizes": {
+      "type": "json"
+    },
+    "is_hot": {
+      "type": "boolean"
+    },
+    "chapter": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::chapter.chapter"
+    },
+    "creator": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::creator.creator"
+    },
+    "category": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::category.category"
     }
   }
 }

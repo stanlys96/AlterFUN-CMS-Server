@@ -1,0 +1,45 @@
+{
+  "kind": "collectionType",
+  "collectionName": "quest_submissions",
+  "info": {
+    "singularName": "quest-submission",
+    "pluralName": "quest-submissions",
+    "displayName": "Quest Submission"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "submission_link": {
+      "type": "string",
+      "required": true
+    },
+    "email": {
+      "type": "email",
+      "required": true
+    },
+    "notes": {
+      "type": "text"
+    },
+    "file": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images", "videos", "files", "audios"]
+    },
+    "submission_status": {
+      "type": "enumeration",
+      "enum": ["on_review", "approved", "rejected"]
+    },
+    "quest": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::quest.quest"
+    },
+    "user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::registered-user.registered-user"
+    }
+  }
+}

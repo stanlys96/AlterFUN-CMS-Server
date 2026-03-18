@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "coin_transactions",
+  "info": {
+    "singularName": "coin-transaction",
+    "pluralName": "coin-transactions",
+    "displayName": "Coin Transaction"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "type": {
+      "type": "enumeration",
+      "enum": ["credit", "debit"]
+    },
+    "amount": {
+      "type": "decimal"
+    },
+    "source_type": {
+      "type": "enumeration",
+      "enum": ["quest", "merchandise", "manual"]
+    },
+    "source_id": {
+      "type": "string"
+    },
+    "note": {
+      "type": "string"
+    },
+    "user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::registered-user.registered-user"
+    }
+  }
+}

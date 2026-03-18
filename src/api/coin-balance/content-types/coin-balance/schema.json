@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "coin_balances",
+  "info": {
+    "singularName": "coin-balance",
+    "pluralName": "coin-balances",
+    "displayName": "Coin Balance"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "token_name": {
+      "type": "string"
+    },
+    "amount": {
+      "type": "decimal"
+    },
+    "user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::registered-user.registered-user"
+    }
+  }
+}

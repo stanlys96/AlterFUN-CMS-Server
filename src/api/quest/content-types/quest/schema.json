@@ -1,0 +1,59 @@
+{
+  "kind": "collectionType",
+  "collectionName": "quests",
+  "info": {
+    "singularName": "quest",
+    "pluralName": "quests",
+    "displayName": "Quest"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images"]
+    },
+    "reward": {
+      "type": "string"
+    },
+    "deadline": {
+      "type": "datetime"
+    },
+    "quest_status": {
+      "type": "enumeration",
+      "enum": ["active", "ended"]
+    },
+    "prize_1st": {
+      "type": "string"
+    },
+    "prize_2nd": {
+      "type": "string"
+    },
+    "prize_3rd": {
+      "type": "string"
+    },
+    "prize_4th": {
+      "type": "string"
+    },
+    "chapter": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::chapter.chapter"
+    },
+    "creator": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::creator.creator"
+    }
+  }
+}
