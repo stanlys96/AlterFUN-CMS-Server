@@ -770,14 +770,14 @@ export interface ApiOrderItemOrderItem extends Struct.CollectionTypeSchema {
       'manyToOne',
       'api::merchandise.merchandise'
     >;
+    order_status: Schema.Attribute.Enumeration<
+      ['pending', 'processing', 'shipped', 'done']
+    >;
     postal_code: Schema.Attribute.String;
     province: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     quantity: Schema.Attribute.Integer;
     size: Schema.Attribute.String;
-    status: Schema.Attribute.Enumeration<
-      ['pending', 'processing', 'shipped', 'done']
-    >;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
