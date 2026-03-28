@@ -652,27 +652,39 @@ export interface ApiCreatorCreator extends Struct.CollectionTypeSchema {
   };
   attributes: {
     active_since: Schema.Attribute.Date;
+    active_time: Schema.Attribute.String;
     avatar: Schema.Attribute.Media<'images'>;
     bio: Schema.Attribute.Text;
     category: Schema.Attribute.Relation<'manyToOne', 'api::category.category'>;
+    chapters: Schema.Attribute.Relation<'oneToMany', 'api::chapter.chapter'>;
     contents: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    discord: Schema.Attribute.String;
+    instagram: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::creator.creator'
     > &
       Schema.Attribute.Private;
+    merchandises: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::merchandise.merchandise'
+    >;
     name: Schema.Attribute.String & Schema.Attribute.Required;
     publishedAt: Schema.Attribute.DateTime;
     subscribers: Schema.Attribute.String;
+    twitch: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     username: Schema.Attribute.String & Schema.Attribute.Unique;
+    videos: Schema.Attribute.Relation<'oneToMany', 'api::video.video'>;
     views: Schema.Attribute.String;
+    x: Schema.Attribute.String;
+    youtube: Schema.Attribute.String;
   };
 }
 

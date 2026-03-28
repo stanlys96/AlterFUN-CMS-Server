@@ -43,6 +43,42 @@
     },
     "active_since": {
       "type": "date"
+    },
+    "active_time": {
+      "type": "string"
+    },
+    "merchandises": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::merchandise.merchandise",
+      "mappedBy": "creator"
+    },
+    "videos": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::video.video",
+      "mappedBy": "creator"
+    },
+    "chapters": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::chapter.chapter",
+      "mappedBy": "creator"
+    },
+    "instagram": {
+      "type": "string"
+    },
+    "discord": {
+      "type": "string"
+    },
+    "x": {
+      "type": "string"
+    },
+    "twitch": {
+      "type": "string"
+    },
+    "youtube": {
+      "type": "string"
     }
   }
 }

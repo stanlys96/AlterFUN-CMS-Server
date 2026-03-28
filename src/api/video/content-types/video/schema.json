@@ -25,7 +25,8 @@
     "creator": {
       "type": "relation",
       "relation": "manyToOne",
-      "target": "api::creator.creator"
+      "target": "api::creator.creator",
+      "inversedBy": "videos"
     }
   }
 }
