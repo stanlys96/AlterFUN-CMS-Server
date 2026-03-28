@@ -521,7 +521,12 @@ export interface ApiChapterChapter extends Struct.CollectionTypeSchema {
       'api::chapter.chapter'
     > &
       Schema.Attribute.Private;
+    merchandises: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::merchandise.merchandise'
+    >;
     publishedAt: Schema.Attribute.DateTime;
+    quests: Schema.Attribute.Relation<'oneToMany', 'api::quest.quest'>;
     title: Schema.Attribute.String & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &

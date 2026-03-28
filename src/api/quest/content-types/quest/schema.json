@@ -21,7 +21,9 @@
     "image": {
       "type": "media",
       "multiple": false,
-      "allowedTypes": ["images"]
+      "allowedTypes": [
+        "images"
+      ]
     },
     "reward": {
       "type": "string"
@@ -31,7 +33,10 @@
     },
     "quest_status": {
       "type": "enumeration",
-      "enum": ["active", "ended"]
+      "enum": [
+        "active",
+        "ended"
+      ]
     },
     "prize_1st": {
       "type": "string"
@@ -48,7 +53,8 @@
     "chapter": {
       "type": "relation",
       "relation": "manyToOne",
-      "target": "api::chapter.chapter"
+      "target": "api::chapter.chapter",
+      "inversedBy": "quests"
     },
     "creator": {
       "type": "relation",

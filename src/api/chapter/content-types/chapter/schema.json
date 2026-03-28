@@ -21,7 +21,12 @@
     "background": {
       "type": "media",
       "multiple": false,
-      "allowedTypes": ["images", "videos", "files", "audios"]
+      "allowedTypes": [
+        "images",
+        "videos",
+        "files",
+        "audios"
+      ]
     },
     "deadline": {
       "type": "datetime"
@@ -31,6 +36,18 @@
       "relation": "manyToOne",
       "target": "api::creator.creator",
       "inversedBy": "chapters"
+    },
+    "quests": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::quest.quest",
+      "mappedBy": "chapter"
+    },
+    "merchandises": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::merchandise.merchandise",
+      "mappedBy": "chapter"
     }
   }
 }
