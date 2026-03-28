@@ -20,7 +20,9 @@
     "thumbnail": {
       "type": "media",
       "multiple": false,
-      "allowedTypes": ["images"]
+      "allowedTypes": [
+        "images"
+      ]
     },
     "creator": {
       "type": "relation",

@@ -534,6 +534,42 @@ export interface ApiChapterChapter extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiCharacterCharacter extends Struct.CollectionTypeSchema {
+  collectionName: 'characters';
+  info: {
+    description: 'Individual characters belonging to a creator IP';
+    displayName: 'Character';
+    pluralName: 'characters';
+    singularName: 'character';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    avatar: Schema.Attribute.Media<'images'>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    creator: Schema.Attribute.Relation<'manyToOne', 'api::creator.creator'>;
+    description: Schema.Attribute.Text;
+    full_image: Schema.Attribute.Media<'images'>;
+    is_default: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::character.character'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String & Schema.Attribute.Required;
+    publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.String & Schema.Attribute.Unique;
+    sort_order: Schema.Attribute.Integer & Schema.Attribute.DefaultTo<0>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiCoinBalanceCoinBalance extends Struct.CollectionTypeSchema {
   collectionName: 'coin_balances';
   info: {
@@ -662,6 +698,10 @@ export interface ApiCreatorCreator extends Struct.CollectionTypeSchema {
     bio: Schema.Attribute.Text;
     category: Schema.Attribute.Relation<'manyToOne', 'api::category.category'>;
     chapters: Schema.Attribute.Relation<'oneToMany', 'api::chapter.chapter'>;
+    characters: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::character.character'
+    >;
     contents: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -680,6 +720,7 @@ export interface ApiCreatorCreator extends Struct.CollectionTypeSchema {
     >;
     name: Schema.Attribute.String & Schema.Attribute.Required;
     publishedAt: Schema.Attribute.DateTime;
+    quests: Schema.Attribute.Relation<'oneToMany', 'api::quest.quest'>;
     subscribers: Schema.Attribute.String;
     twitch: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
@@ -1458,6 +1499,7 @@ declare module '@strapi/strapi' {
       'api::bookmark.bookmark': ApiBookmarkBookmark;
       'api::category.category': ApiCategoryCategory;
       'api::chapter.chapter': ApiChapterChapter;
+      'api::character.character': ApiCharacterCharacter;
       'api::coin-balance.coin-balance': ApiCoinBalanceCoinBalance;
       'api::coin-transaction.coin-transaction': ApiCoinTransactionCoinTransaction;
       'api::creator-application.creator-application': ApiCreatorApplicationCreatorApplication;
