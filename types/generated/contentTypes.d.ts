@@ -450,6 +450,10 @@ export interface ApiBookmarkBookmark extends Struct.CollectionTypeSchema {
       'api::bookmark.bookmark'
     > &
       Schema.Attribute.Private;
+    merchandise: Schema.Attribute.Relation<
+      'manyToOne',
+      'api::merchandise.merchandise'
+    >;
     publishedAt: Schema.Attribute.DateTime;
     quest: Schema.Attribute.Relation<'manyToOne', 'api::quest.quest'>;
     updatedAt: Schema.Attribute.DateTime;

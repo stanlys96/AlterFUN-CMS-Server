@@ -20,6 +20,11 @@
       "type": "relation",
       "relation": "manyToOne",
       "target": "api::quest.quest"
+    },
+    "merchandise": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::merchandise.merchandise"
     }
   }
 }
